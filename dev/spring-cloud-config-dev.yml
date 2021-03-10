@@ -7,7 +7,7 @@ spring:
     gateway:
       routes:
         id: gatewayB
-        uri: lb://spring-cloudB
+        uri: http://127.0.0.1:8222
         predicates:
           - Path=/gatewayB/**
 eureka:
