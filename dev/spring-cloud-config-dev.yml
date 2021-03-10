@@ -10,10 +10,6 @@ spring:
         uri: lb://spring-cloudB
         predicates:
           - Path=/gatewayB/**
-        filters:
-          - name: RequestSize
-            args:
-            maxSize: 9000000
 eureka:
   client:
     service-url:
