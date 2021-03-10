@@ -1,2 +1,27 @@
-config:
-  hello : hello rude3knife i am dev (kafka6)
+server:
+  port : 8111
+spring:
+  application:
+    name: spring-cloudA #服务名
+  cloud:
+    gateway:
+      routes:
+        id: gatewayB
+        uri: lb://spring-cloudB
+        predicates:
+          - Path=/gatewayB/**
+        filters:
+          - name: RequestSize
+            args:
+            maxSize: 9000000
+eureka:
+  client:
+    service-url:
+      # 注册中心服务端地址
+      defaultZone: http://localhost:8888/eureka/
+# 监控中心调用配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
