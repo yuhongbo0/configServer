@@ -1,6 +1,19 @@
 server:
   port : 8111
 spring:
+  zipkin:
+    #zipkin服务地址 即上面的使用docker启动服务或jar包启动的服务
+    base-url: http://127.0.0.1:9411/
+    sender:
+      #http方式传输数据到zipkin
+      type: web
+    service:
+      #服务名称 order为订单系统，express为快递系统
+      name: order
+    sleuth:
+      sampler:
+        #取样比例 1为每次都将数据传入Zipkin 默认为0.1
+        probability: 1
   application:
     name: spring-cloudA #服务名
   cloud:
