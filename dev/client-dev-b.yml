@@ -11,7 +11,7 @@ spring:
       type: web
     service:
       #服务名称 order为订单系统，express为快递系统
-      name: order
+      name: express
     sleuth:
       sampler:
         #取样比例 1为每次都将数据传入Zipkin 默认为0.1
