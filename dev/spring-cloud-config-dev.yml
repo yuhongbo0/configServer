@@ -6,10 +6,10 @@ spring:
   cloud:
     gateway:
       routes:
-        id: gatewayB
-        uri: http://127.0.0.1:8222
-        predicates:
-          - Path=/gatewayB/**
+        - id: abc
+          uri: http://127.0.0.1:8222
+          predicates:
+            - Path=/gatewayB/**
 eureka:
   client:
     service-url:
