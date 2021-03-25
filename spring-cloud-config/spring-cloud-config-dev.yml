@@ -1,2 +1,4 @@
+server:
+  port : 8111
 config:
   hello : hello rude3knife i am dev (kafka606)
